@@ -1,5 +1,7 @@
 using System;
 
+using R5T.T0143;
+
 
 namespace R5T.T0141
 {
@@ -10,7 +12,9 @@ namespace R5T.T0141
     /// The marker attribute is useful for surveying demonstrations classes and building a catalogue of demonstrations.
     /// </summary>
     [AttributeUsage(AttributeTargets.Interface, AllowMultiple = false, Inherited = false)]
-    public class DemonstrationsMarkerAttribute : Attribute
+    [MarkerAttributeMarker]
+    public class DemonstrationsMarkerAttribute : Attribute,
+        IMarkerAttributeMarker
     {
         private readonly bool zIsDemonstrations;
         /// <summary>
